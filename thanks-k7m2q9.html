@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Дякую! Доступ до модуля — AI для фіндиректора</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1A2C;--gold:#C9A24A;--paper:#F7F4EC}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(900px 500px at 50% -10%,#1b3150,var(--navy));color:var(--paper);font-family:Inter,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{max-width:560px;width:100%;border:1px solid rgba(201,162,74,.45);border-radius:20px;padding:40px 32px;background:rgba(255,255,255,.03);text-align:center}
+.ok{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#E8CE86,var(--gold));color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;margin:0 auto 20px}
+h1{font-family:Fraunces,serif;font-size:32px;margin:0 0 10px;line-height:1.15}
+p{color:rgba(247,244,236,.75);line-height:1.55;margin:0 0 18px}
+ol{text-align:left;color:rgba(247,244,236,.85);line-height:1.7;padding-left:20px;margin:0 0 22px}
+.kw{display:flex;gap:8px;align-items:center;justify-content:center;border:1px dashed var(--gold);border-radius:12px;padding:14px;margin:0 0 22px}
+.kw code{font-family:'IBM Plex Mono',monospace;font-size:17px;white-space:nowrap;color:var(--gold)}
+button,.btn{font:600 15px Inter,sans-serif;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;background:var(--gold);color:var(--navy);text-decoration:none;display:inline-block}
+.btn{display:block;padding:16px;font-size:16px;background:linear-gradient(135deg,#E8CE86,var(--gold))}
+.fine{font-size:13px;margin:16px 0 0;color:rgba(247,244,236,.5)}
+</style></head>
+<body data-thanks>
+<main class="card">
+  <div class="ok">✓</div>
+  <h1>Оплату отримано — дякую!</h1>
+  <p>Залишилось відкрити доступ до 5 уроків у Telegram-боті:</p>
+  <ol>
+    <li>Натисніть кнопку нижче — відкриється бот</li>
+    <li>Натисніть «Start» (якщо ще не запускали)</li>
+    <li>Надішліть боту це кодове слово:</li>
+  </ol>
+  <div class="kw"><code id="kw">AI-CFO-2026</code><button id="copy" type="button">Копіювати</button></div>
+  <a class="btn" data-bot href="https://t.me/CFO_vlasnyk_bot">Відкрити бота в Telegram</a>
+  <p class="fine">Не спрацювало? Напишіть нам у боті — допоможемо.</p>
+</main>
+<script>
+document.getElementById('copy').onclick=function(){var b=this,t=document.getElementById('kw').textContent;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Скопійовано ✓'}).catch(function(){var r=document.createRange();r.selectNode(document.getElementById('kw'));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent='Виділено — Ctrl+C'});};
+</script>
+<script src="config.js"></script><script src="site.js"></script>
+</body></html>
